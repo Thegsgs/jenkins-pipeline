@@ -15,12 +15,11 @@ pipeline {
                     git push -u origin test-branch
                     ''')
                 }
-
             }
-        }
-    }
   post {
     always {
       cleanWs()
     }
   }
+  }
+}
