@@ -3,8 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'Github-username-password', usernameVariable: 'GIT_AUTHOR_NAME', passwordVariable: 'GIT_PASSWORD']]) {
-                    sh('''
+                  sh('''
                     git config user.email "jenkins@gmail.com"
                     git config user.name "Jenkins"
                     git config push.default simple
@@ -25,4 +24,3 @@ pipeline {
       cleanWs()
     }
   }
-}
